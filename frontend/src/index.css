@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --color-forest-900: #0f2318;
+  --color-forest-800: #1a3a28;
+  --color-forest-700: #235234;
+  --color-forest-600: #2d6942;
+  --color-forest-500: #3a8050;
+  --color-forest-400: #4f9e67;
+  --color-forest-300: #72b886;
+  --color-forest-200: #a8d4b5;
+  --color-forest-100: #dff0e5;
+  --color-forest-50: #f2f9f4;
+  --color-earth-900: #2d1f0a;
+  --color-earth-800: #4a3414;
+  --color-earth-700: #664a1e;
+  --color-earth-600: #8a6528;
+  --color-earth-500: #b08040;
+  --color-earth-400: #c89955;
+  --color-earth-300: #d9b87a;
+  --color-earth-200: #ecd6a5;
+  --color-earth-100: #f7ecd2;
+  --color-earth-50: #fdf8ef;
+  --color-gold-500: #c4922a;
+  --color-gold-400: #d4a843;
+  --color-gold-300: #e4c06e;
+  --color-neutral-900: #111827;
+  --color-neutral-800: #1f2937;
+  --color-neutral-700: #374151;
+  --color-neutral-600: #4b5563;
+  --color-neutral-500: #6b7280;
+  --color-neutral-400: #9ca3af;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-50: #f9fafb;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: var(--font-sans);
+  background-color: #f9fafb;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #d1fae5;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+.sidebar-link:hover { background-color: rgba(255,255,255,0.1); color: white; }
+.sidebar-link.active { background-color: rgba(255,255,255,0.15); color: white; font-weight: 600; }
+.sidebar-link.active svg { color: #a7f3d0; }
+
+.confidence-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+.confidence-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in { animation: slide-in 0.2s ease-out; }
